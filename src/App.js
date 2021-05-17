@@ -6,37 +6,40 @@ import { useEffect, useState } from 'react';
 import ShowCard from './components/shows/ShowCard';
 import SourceCard from './components/sources/SourceCard';
 import { Link } from "react-router-dom";
+import { Route, Switch } from "react-router";
+import Home from "./components/Home/Home";
+import SourcePage from "./components/sources/SourcePage";
 
 function App() {
 
   // placeholder content
 const sources = [
   {
-    id: 0,
+    id: 1,
     name: 'Netflix',
     url: "http://netflix.com",
     color: 'E50914'
   },
   {
-    id: 1,
+    id: 2,
     name: 'Hulu',
     url: "http://hulu.com",
     color: '1CE783'
   },
   {
-    id: 2,
+    id: 3,
     name: 'Amazon Prime',
     url: "http://hulu.com",
     color: '232F3E'
   },
   {
-    id: 3,
+    id: 4,
     name: 'HBO Max',
     url: "http://hulu.com",
     color: 'B535F6'
   },
   {
-    id: 4,
+    id: 5,
     name: 'Disney Plus',
     url: "http://disneyplus.com",
     color: '19C9D4'
@@ -85,19 +88,18 @@ useEffect(() => {
     })
   )
 },[])
-console.log(listSources);
+
   return (
     <div className="">
       <Header />
-      <div className="row m-3" >
-        {listSources}
-          <div className="col p-1" style={{minWidth: "80px", maxWidth: "100px"}}>
-            <Link title='add source' >
-                <img style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=%01&bg=ddd`} className="card-img-top" alt="..." />
-            </ Link>
-        </div>
-      </div>
-      <div className="row m-3" >{listShows}</div>
+      <Switch>
+        <Route exact={true} path="/">
+          <Home placeholder={{sources, shows}} listSources={listSources} listShows={listShows} />
+        </Route>
+        <Route path="/sources/:sourceId">
+          <SourcePage sources={sources} />
+        </Route>
+      </Switch>
       {/* <NotFound /> */}
     </div>
   );
