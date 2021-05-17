@@ -99,6 +99,7 @@ useEffect(() => {
         <Route path="/sources/:sourceId">
           <SourcePage sources={sources} />
         </Route>
+        <Route><NotFound /></Route>
       </Switch>
       {/* <NotFound /> */}
     </div>
