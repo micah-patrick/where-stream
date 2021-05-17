@@ -73,7 +73,7 @@ console.log(listSources);
   return (
     <div className="">
       <Header />
-      {listSources}
+      <div className="row" >{listSources}</div>
       {listShows}
       {/* <NotFound /> */}
     </div>
