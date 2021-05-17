@@ -1,15 +1,12 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function SourceCard({source}){
     return (
-        <div className="col">
-            <div className="card" style={{width: "18rem"}}>
-                <img src="https://plchldr.co/i/500x250" className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
+        <div className="col p-1" style={{minWidth: "80px", maxWidth: "100px"}}>
+            <Link title={source.name} >
+                <img style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=${source.name}&bg=${source.color}`} className="card-img-top" alt="..." />
+            </ Link>
         </div>
     )
 }

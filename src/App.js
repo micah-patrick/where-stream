@@ -5,6 +5,7 @@ import NotFound from './components/common/NotFound';
 import { useEffect, useState } from 'react';
 import ShowCard from './components/shows/ShowCard';
 import SourceCard from './components/sources/SourceCard';
+import { Link } from "react-router-dom";
 
 function App() {
 
@@ -13,17 +14,32 @@ const sources = [
   {
     id: 0,
     name: 'Netflix',
-    url: "http://netflix.com"
+    url: "http://netflix.com",
+    color: 'E50914'
   },
   {
     id: 1,
     name: 'Hulu',
-    url: "http://hulu.com"
+    url: "http://hulu.com",
+    color: '1CE783'
   },
   {
     id: 2,
+    name: 'Amazon Prime',
+    url: "http://hulu.com",
+    color: '232F3E'
+  },
+  {
+    id: 3,
+    name: 'HBO Max',
+    url: "http://hulu.com",
+    color: 'B535F6'
+  },
+  {
+    id: 4,
     name: 'Disney Plus',
-    url: "http://disneyplus.com"
+    url: "http://disneyplus.com",
+    color: '19C9D4'
   }
 ]
 const shows = [
@@ -73,8 +89,15 @@ console.log(listSources);
   return (
     <div className="">
       <Header />
-      <div className="row" >{listSources}</div>
-      {listShows}
+      <div className="row m-3" >
+        {listSources}
+          <div className="col p-1" style={{minWidth: "80px", maxWidth: "100px"}}>
+            <Link title='add source' >
+                <img style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=%01&bg=ddd`} className="card-img-top" alt="..." />
+            </ Link>
+        </div>
+      </div>
+      <div className="row m-3" >{listShows}</div>
       {/* <NotFound /> */}
     </div>
   );
