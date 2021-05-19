@@ -14,9 +14,15 @@ export default function SourcePage({sources}){
     useState(() =>{
         if (source){
             setDisplay(
-                <div className="p-0" style={{}}>
-                    <img style={{}} src={`https://plchldr.co/i/1000x100?text=${source.name}&bg=${source.color}`} className="card-img-top" />
-                </div>
+                <>
+                    <div className="p-0" style={{}}>
+                        <img style={{}} src={`https://plchldr.co/i/500x50?text=${source.name}&bg=${source.color}`} className="card-img-top" />
+                    </div>
+                    <h2>{source.name}</h2>
+                    <p>{source.url}</p>
+                    <p>{source.color}</p>
+                    <p>{source.id}</p>
+                </>
             )
         }
     },[])
