@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function ShowCard({show}){
     return (
-        <div className="col p-1" style={{minWidth: "80px", maxWidth: "100px"}}>
+        <div className="col m-2 p-0" style={{minWidth: "110px", maxWidth: "110px"}}>
             <Link title={show.name} >
-                <img src={`https://plchldr.co/i/100?text=${show.name}`} className="card-img-top" alt="..." />
+                <img src={`https://plchldr.co/i/110?text=${show.name}`} className="card-img-top" alt="..." />
             </ Link>
         </div>
     )

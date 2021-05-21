@@ -4,7 +4,7 @@ export default function Header() {
 
     const headerLinkStyles = {
         textDecoration: "none",
-        color: "#fff"
+        color: "#000"
     }
 
     return(
