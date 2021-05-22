@@ -15,13 +15,17 @@ export default function SourcePage({sources}){
         if (source){
             setDisplay(
                 <>
-                    <div className="p-0" style={{}}>
-                        <img style={{}} src={`https://plchldr.co/i/500x50?text=${source.name}&bg=${source.color}`} className="card-img-top" />
+                <div className="container">
+                    <div className="row">
+                        <div className="col m-1 p-0" style={{minWidth: "70px", maxWidth: "70px"}}>
+                            <img style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=${source.name}&bg=${source.color}`} className="card-img-top" alt={source.name} />
+                        </div>
+                        <h2 className="col" >{source.name}</h2>
                     </div>
-                    <h2>{source.name}</h2>
                     <p>{source.url}</p>
                     <p>{source.color}</p>
                     <p>{source.id}</p>
+                </div>
                 </>
             )
         }
