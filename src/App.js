@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { Route, Switch } from "react-router";
 import Home from "./components/Home/Home";
 import SourcePage from "./components/sources/SourcePage";
+import ShowPage from './components/shows/ShowPage';
 
 function App() {
 
@@ -48,24 +49,30 @@ const sources = [
 const shows = [
   {
     id: 0,
-    name: 'Show Title',
+    name: 'Survivor',
     showType: "tv",
-    genre: "drama",
-    sourceIds: [0, 1, 2]
+    genre: "gameshow",
+    sourceIds: [0, 1, 2],
+    color: '19C9D4',
+    description: "this is a description of the show"
   },
   {
     id: 1,
-    name: 'Another Show Title',
+    name: 'Happy Gilmore',
     showType: "movie",
     genre: "comedy",
-    sourceIds: [0, 2]
+    sourceIds: [0, 2],
+    color: '19C9D4',
+    description: "this is a description of the show"
   },
   {
     id: 2,
-    name: 'A Show',
+    name: 'Community',
     showType: "tv",
     genre: "comedy",
-    sourceIds: [1]
+    sourceIds: [1],
+    color: '19C9D4',
+    description: "this is a description of the show"
   }
 ]
 
@@ -98,6 +105,9 @@ useEffect(() => {
         </Route>
         <Route path="/sources/:sourceId">
           <SourcePage sources={sources} />
+        </Route>
+        <Route path="/shows/:showId">
+          <ShowPage shows={shows} />
         </Route>
         <Route><NotFound /></Route>
       </Switch>

@@ -5,8 +5,8 @@ export default function ShowCard({show}){
     return (
         <>
         <div className="col">
-            <div className="card"  style={{width: "18rem;"}}>
-                <Link title={show.name} >
+            <div className="card"  style={{minWidth: "50%;"}}>
+                <Link to={`/shows/${show.id}`} title={show.name} >
                     <img src={`https://plchldr.co/i/110?text=${show.name}`} className="card-img-top" alt="..." />
                 </ Link>
             <div className="card-body">
