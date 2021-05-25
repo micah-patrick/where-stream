@@ -41,3 +41,24 @@ h2{
     transform: rotate(360deg);
   }
 }
+
+.sourceCard{
+  min-width: 25%!important;
+  max-width: 25%!important;
+}
+.showCard{
+  min-width: 100%!important;
+  max-width: 100%!important;
+}
+
+@media only screen and (min-width: 768px) {
+  .sourceCard{
+    min-width: 10%!important;
+    max-width: 10%!important;
+  }
+  .showCard{
+    min-width: 25%!important;
+    max-width: 25%!important;
+  }
+  
+}
