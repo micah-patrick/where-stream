@@ -15,17 +15,15 @@ export default function SourcePage({sources}){
         if (source){
             setDisplay(
                 <>
-                <div className="container">
-                    <div className="row">
+                <div className="container">       
+                    <a className="row" href={source.url} target="_blank">
                         <div className="col m-1 p-0" style={{minWidth: "70px", maxWidth: "70px"}}>
                             <img style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=${source.name}&bg=${source.color}`} className="card-img-top" alt={source.name} />
                         </div>
-                        <h2 className="col" >
-                            <a href={source.url} target="_blank">
+                        <h2 className="col pt-3" >
                             {source.name}
-                            </a>
                         </h2>
-                    </div>
+                    </a>
                     <p>{source.url}</p>
                     <p>{source.color}</p>
                     <p>{source.id}</p>

@@ -19,9 +19,9 @@ export default function ShowPage({shows}){
                     <div className="container">
                         <div className="row">
                             <div className="col m-1 p-0" style={{minWidth: "70px", maxWidth: "70px"}}>
-                                <img style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=${show.name}&bg=${show.color}`} className="card-img-top" alt={show.name} />
+                                <img src={`https://plchldr.co/i/100?text=${show.name}&bg=${show.color}`} className="card-img-top" alt={show.name} />
                             </div>
-                            <h2 className="col" >{show.name}</h2>
+                            <h2 className="col pt-3" >{show.name}</h2>
                         </div>
                         <p>{show.sourceIds.join(", ")}</p>
                         <p>{show.color}</p>
