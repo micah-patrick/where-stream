@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Home({listSources, listShows}){
     return (
         <>
-        <div className="container p-3">
+        <div className="container p-3 bg-white">
             <h2>
                 Your Streaming Sources
                 <Link className="ml-3 btn btn-success" title='add source' >
@@ -15,7 +15,7 @@ export default function Home({listSources, listShows}){
                 {listSources}
             </div>
         </div>
-        <div className="container-fluid bg-dark text-white min-vh-100 d-inline-block">
+        <div className="container-fluid bg-dark text-white">
             <div className="container p-3">
                 <h2>
                     Your Shows
