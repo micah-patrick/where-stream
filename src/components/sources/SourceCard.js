@@ -5,7 +5,7 @@ export default function SourceCard({source}){
     return (
         <div className="sourceCard col m-0 p-2 ">
             <Link to={`/sources/${source.id}`} title={source.name} >
-                <img style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=${source.name}&bg=${source.color}`} className="card-img-top" alt={source.name} />
+                <img style={{borderRadius: "50%", border: "5px solid #F6AEF6"}} src={`https://plchldr.co/i/100?text=${source.name}&bg=${source.color}`} className="card-img-top" alt={source.name} />
             </ Link>
         </div>
     )
