@@ -10,9 +10,9 @@ export default function ShowCard({show}){
                     <img src={`https://plchldr.co/i/110?text=${show.name}`} className="card-img-top" alt="..." />
                 </ Link>
             <div className="card-body row">
-                <img className="col" style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=Netflix&bg=E50914`} />
-                <img className="col" style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=Amazon&bg=232F3E`} />
-                <img className="col" style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=Hulu&bg=1CE783`} />
+                <img className="col" style={{borderRadius: "50%", width: "25%"}} src={`https://plchldr.co/i/100?text=Netflix&bg=E50914`} />
+                <img className="col" style={{borderRadius: "50%", width: "25%"}} src={`https://plchldr.co/i/100?text=Amazon&bg=232F3E`} />
+                <img className="col" style={{borderRadius: "50%", width: "25%"}} src={`https://plchldr.co/i/100?text=Hulu&bg=1CE783`} />
             </div>
             </div>
         </div>
