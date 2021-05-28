@@ -9,6 +9,10 @@ export default function ShowCard({show}){
                 <Link to={`/shows/${show.id}`} title={show.name} >
                     <img src={`https://plchldr.co/i/110?text=${show.name}`} className="card-img-top" alt="..." />
                 </ Link>
+                    {/* <span className="bi-star" style={{fontSize: '2rem', color: 'cornflowerblue', height: '10px'}}></span> */}
+                    {/* <svg class="bi bi-star-fill" style={{color: "red"}}/> */}
+                    {/* <span className="oi oi-plus text-dark" /> */}
+                    <i className="where-star fas fa-star"></i>
             <div className="card-body row">
                 <img className="col px-1" style={{borderRadius: "50%", maxWidth: "25%"}} src={`https://plchldr.co/i/100?text=Netflix&bg=E50914`} />
                 <img className="col px-1" style={{borderRadius: "50%", maxWidth: "25%"}} src={`https://plchldr.co/i/100?text=Amazon&bg=232F3E`} />
