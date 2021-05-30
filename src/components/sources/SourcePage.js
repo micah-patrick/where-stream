@@ -18,7 +18,7 @@ export default function SourcePage({sources}){
                 <div className="container">       
                     <a className="row" href={source.url} target="_blank">
                         <div className="col m-1 p-0" style={{minWidth: "70px", maxWidth: "70px"}}>
-                            <img style={{borderRadius: "50%"}} src={`https://plchldr.co/i/100?text=${source.name}&bg=${source.color}`} className="card-img-top" alt={source.name} />
+                            <img style={{borderRadius: "50%", border: "5px solid #F6AEF6"}} src={`https://plchldr.co/i/100?text=${source.name}&bg=${source.color}`} className="card-img-top" alt={source.name} />
                         </div>
                         <h2 className="col pt-3" >
                             {source.name}
