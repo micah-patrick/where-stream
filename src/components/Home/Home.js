@@ -8,7 +8,7 @@ export default function Home({listSources, listShows}){
             <h2>
                 Your Streaming Sources
                 <Link className="ml-3 btn btn-success" title='add source' >
-                    Add
+                    Add Source
                 </ Link>
             </h2>
             <div className="row m-3" >
@@ -19,8 +19,8 @@ export default function Home({listSources, listShows}){
             <div className="container p-3">
                 <h2>
                     Your Shows
-                    <Link className="ml-3 btn btn-success" title='add source' >
-                        Add Source
+                    <Link className="ml-3 btn btn-success" title='add show' >
+                        Add Show
                     </ Link>
                 </h2>
                 <div className="row m-3" >{listShows}</div>
