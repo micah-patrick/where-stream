@@ -20,7 +20,7 @@ export default function Home({listSources, listShows}){
                 <h2>
                     Your Shows
                     <Link className="ml-3 btn btn-success" title='add source' >
-                        Add
+                        Add Source
                     </ Link>
                 </h2>
                 <div className="row m-3" >{listShows}</div>
