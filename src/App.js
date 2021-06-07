@@ -33,7 +33,6 @@ function App() {
   }, []);
 
 
-
   // placeholder content
 // const sources = [
 //   {
@@ -102,27 +101,29 @@ const [showsList, setShowsList] = useState([]);
 
 useEffect(() => {
   setSourcesList(
-    sources.map((source, index) => {
+    sources.map((source) => {
       return (
-      <SourceCard key={index} source={source} />
+      <SourceCard key={source.source_id} source={source} />
       )
     })
   )
   setShowsList(
-    shows.map((show, index) => {
+    shows.map((show) => {
       return (
-      <ShowCard key={index} show={show} />
+      <ShowCard key={show.show_id} show={show} />
       )
     })
   )
-},[])
+},[shows])
+
+console.log(sourcesList);
 
   return (
     <div className="">
       <Header />
       <Switch>
         <Route exact={true} path="/">
-          <Home placeholder={{sources, shows}} listSources={listSources} listShows={listShows} />
+          <Home placeholder={{sources, shows}} sourcesList={sourcesList} showsList={showsList} />
         </Route>
         <Route path="/sources/:sourceId">
           <SourcePage sources={sources} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-export default function Home({listSources, listShows}){
+export default function Home({sourcesList, showsList}){
     return (
         <>
         <div className="container p-3 bg-white">
@@ -12,7 +12,7 @@ export default function Home({listSources, listShows}){
                 </ Link>
             </h2>
             <div className="row m-3" >
-                {listSources}
+                {sourcesList}
             </div>
         </div>
         <div className="container-fluid bg-dark text-white">
@@ -23,7 +23,7 @@ export default function Home({listSources, listShows}){
                         Add Show
                     </ Link>
                 </h2>
-                <div className="row m-3" >{listShows}</div>
+                <div className="row m-3" >{showsList}</div>
             </div>
         </div>
         </>
