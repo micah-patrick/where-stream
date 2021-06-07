@@ -10,84 +10,105 @@ import { Route, Switch } from "react-router";
 import Home from "./components/Home/Home";
 import SourcePage from "./components/sources/SourcePage";
 import ShowPage from './components/shows/ShowPage';
+import { listSources, listShows } from "./utils/api";
 
 function App() {
 
-  // placeholder content
-const sources = [
-  {
-    id: 1,
-    name: 'Netflix',
-    url: "http://netflix.com",
-    color: 'E50914'
-  },
-  {
-    id: 2,
-    name: 'Hulu',
-    url: "http://hulu.com",
-    color: '1CE783'
-  },
-  {
-    id: 3,
-    name: 'Amazon Prime',
-    url: "http://hulu.com",
-    color: '232F3E'
-  },
-  {
-    id: 4,
-    name: 'HBO Max',
-    url: "http://hulu.com",
-    color: 'B535F6'
-  },
-  {
-    id: 5,
-    name: 'Disney Plus',
-    url: "http://disneyplus.com",
-    color: '19C9D4'
-  }
-]
-const shows = [
-  {
-    id: 0,
-    name: 'Survivor',
-    showType: "tv",
-    genre: "gameshow",
-    sourceIds: [0, 1, 2],
-    color: '19C9D4',
-    description: "this is a description of the show"
-  },
-  {
-    id: 1,
-    name: 'Happy Gilmore',
-    showType: "movie",
-    genre: "comedy",
-    sourceIds: [0, 2],
-    color: '19C9D4',
-    description: "this is a description of the show"
-  },
-  {
-    id: 2,
-    name: 'Community',
-    showType: "tv",
-    genre: "comedy",
-    sourceIds: [1],
-    color: '19C9D4',
-    description: "this is a description of the show"
-  }
-]
+  const [sources, setSources] = useState([]);
+  const [shows, setShows] = useState([]);
+  const [error, setError] = useState(null);
 
-const [listSources, setListSources] = useState([]);
-const [listShows, setListShows] = useState([]);
+  useEffect(() => {
+    setError(null);
+    const abortController = new AbortController();
+    listSources(abortController.signal).then(setSources).catch(setError);
+    return () => abortController.abort();
+  }, []);
+  
+  useEffect(() => {
+    setError(null);
+    const abortController = new AbortController();
+    listShows(abortController.signal).then(setShows).catch(setError);
+    return () => abortController.abort();
+  }, []);
+
+
+
+  // placeholder content
+// const sources = [
+//   {
+//     id: 1,
+//     name: 'Netflix',
+//     url: "http://netflix.com",
+//     color: 'E50914'
+//   },
+//   {
+//     id: 2,
+//     name: 'Hulu',
+//     url: "http://hulu.com",
+//     color: '1CE783'
+//   },
+//   {
+//     id: 3,
+//     name: 'Amazon Prime',
+//     url: "http://hulu.com",
+//     color: '232F3E'
+//   },
+//   {
+//     id: 4,
+//     name: 'HBO Max',
+//     url: "http://hulu.com",
+//     color: 'B535F6'
+//   },
+//   {
+//     id: 5,
+//     name: 'Disney Plus',
+//     url: "http://disneyplus.com",
+//     color: '19C9D4'
+//   }
+// ]
+// const shows = [
+//   {
+//     id: 0,
+//     name: 'Survivor',
+//     showType: "tv",
+//     genre: "gameshow",
+//     sourceIds: [0, 1, 2],
+//     color: '19C9D4',
+//     description: "this is a description of the show"
+//   },
+//   {
+//     id: 1,
+//     name: 'Happy Gilmore',
+//     showType: "movie",
+//     genre: "comedy",
+//     sourceIds: [0, 2],
+//     color: '19C9D4',
+//     description: "this is a description of the show"
+//   },
+//   {
+//     id: 2,
+//     name: 'Community',
+//     showType: "tv",
+//     genre: "comedy",
+//     sourceIds: [1],
+//     color: '19C9D4',
+//     description: "this is a description of the show"
+//   }
+// ]
+
+const [sourcesList, setSourcesList] = useState([]);
+const [showsList, setShowsList] = useState([]);
 
 useEffect(() => {
-  setListSources(
+  setSourcesList(
     sources.map((source, index) => {
       return (
       <SourceCard key={index} source={source} />
       )
     })
   )
-  setListShows(
+  setShowsList(
     shows.map((show, index) => {
       return (
       <ShowCard key={index} show={show} />

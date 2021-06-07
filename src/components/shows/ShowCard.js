@@ -6,8 +6,8 @@ export default function ShowCard({show}){
         <>
         <div className="col showCard">
             <div className="card ">
-                <Link to={`/shows/${show.id}`} title={show.name} >
-                    <img src={`https://plchldr.co/i/110?text=${show.name}`} className="card-img-top" alt="..." />
+                <Link to={`/shows/${show.show_id}`} title={show.show_name} >
+                    <img src={show.show_img_url} className="card-img-top" alt="..." />
                 </ Link>
                     {/* <span className="bi-star" style={{fontSize: '2rem', color: 'cornflowerblue', height: '10px'}}></span> */}
                     {/* <svg class="bi bi-star-fill" style={{color: "red"}}/> */}
