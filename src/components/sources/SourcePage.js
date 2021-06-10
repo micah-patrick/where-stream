@@ -42,7 +42,7 @@ export default function SourcePage({sources}){
 
             )
         }
-    },[])
+    },[source])
 
 
     return (

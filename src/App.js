@@ -33,69 +33,6 @@ function App() {
   }, []);
 
 
-  // placeholder content
-// const sources = [
-//   {
-//     id: 1,
-//     name: 'Netflix',
-//     url: "http://netflix.com",
-//     color: 'E50914'
-//   },
-//   {
-//     id: 2,
-//     name: 'Hulu',
-//     url: "http://hulu.com",
-//     color: '1CE783'
-//   },
-//   {
-//     id: 3,
-//     name: 'Amazon Prime',
-//     url: "http://hulu.com",
-//     color: '232F3E'
-//   },
-//   {
-//     id: 4,
-//     name: 'HBO Max',
-//     url: "http://hulu.com",
-//     color: 'B535F6'
-//   },
-//   {
-//     id: 5,
-//     name: 'Disney Plus',
-//     url: "http://disneyplus.com",
-//     color: '19C9D4'
-//   }
-// ]
-// const shows = [
-//   {
-//     id: 0,
-//     name: 'Survivor',
-//     showType: "tv",
-//     genre: "gameshow",
-//     sourceIds: [0, 1, 2],
-//     color: '19C9D4',
-//     description: "this is a description of the show"
-//   },
-//   {
-//     id: 1,
-//     name: 'Happy Gilmore',
-//     showType: "movie",
-//     genre: "comedy",
-//     sourceIds: [0, 2],
-//     color: '19C9D4',
-//     description: "this is a description of the show"
-//   },
-//   {
-//     id: 2,
-//     name: 'Community',
-//     showType: "tv",
-//     genre: "comedy",
-//     sourceIds: [1],
-//     color: '19C9D4',
-//     description: "this is a description of the show"
-//   }
-// ]
-
 const [sourcesList, setSourcesList] = useState([]);
 const [showsList, setShowsList] = useState([]);
 
