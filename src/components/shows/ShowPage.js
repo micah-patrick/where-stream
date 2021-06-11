@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+import { useState } from 'react';
 import NotFound from "../common/NotFound";
 
 export default function ShowPage({shows}){

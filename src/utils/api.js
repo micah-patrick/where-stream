@@ -105,6 +105,16 @@ export async function listShows(signal) {
 }
 
 
+/**
+ * Retrieves all existing movies and populates the `reviews` property
+ * @returns {Promise<[source]>}
+ *  a promise that resolves to a possibly empty array of movies saved in the database.
+ */
+export async function readSource(sourceId, signal) {
+  const url = new URL(`${API_BASE_URL}/sources/${sourceId}`);
+  return await fetchJson(url, { headers, signal }, [])
+}
+
 
 /**
  * Retrieves all existing movies and populates the `reviews` property

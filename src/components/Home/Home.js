@@ -10,6 +10,10 @@ export default function Home(){
     const [sources, setSources] = useState([]);
     const [shows, setShows] = useState([]);
     const [error, setError] = useState(null);
+
+    if(error){
+        console.log(error);
+    }
   
     useEffect(() => {
       setError(null);
@@ -44,7 +48,7 @@ export default function Home(){
         )
       })
     )
-  },[shows])
+  },[shows, sources])
 
 
 
